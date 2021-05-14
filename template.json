@@ -1,0 +1,22 @@
+{
+  "Action":{},
+  "Item":{
+    "type": [
+      "gear",
+      "weapon"
+    ],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "weapon": {
+      "templates": ["base"],
+      "properties": ""
+    },
+    "gear": {
+      "templates": ["base"],
+      "cost": 0
+    }
+  }
+}

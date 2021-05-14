@@ -14,10 +14,10 @@
     "test": "jest",
     "start": "npm-run-all --parallel compile:sass compile:pug build:ts",
     "compile:sass": "node-sass ./src/scss/main.scss ./src/bundle.css -w",
-    "compile:pug": "pug ./src/pug/main.pug -o ./template/ -w",
+    "compile:pug": "pug ./src/pug/ -o ./src/templates/ -w",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
     "build:css": "npm-run-all compile:sass prefix:css",
-    "build:ts": "babel --out-file ./src/main.js ./src/typescript/main.ts"
+    "build:ts": "babel --out-file ./src/main.js ./src/typescript/main.ts -w"
   },
   "author": "Cassie Levet",
   "license": "ISC",
