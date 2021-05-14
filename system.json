@@ -1,0 +1,19 @@
+{
+  "name": "forcoinblood2e",
+  "title": "For Coin and Blood 2nd Edition",
+  "description": "A system for playing For Coin and Blood",
+  "author": "Cassie Levett",
+  "version": 0.01,
+  "minimum": "0.7.9",
+  "compatibleCoveVersion": "0.7.9",
+  "esmodule": [
+    "./src/main.js"
+  ],
+  "styles": [
+    "./src/main.css"
+  ],
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "lifeblood",
+  "initiative": "1d6"
+}
