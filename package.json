@@ -1,5 +1,5 @@
 {
-  "name": "fvtt-template",
+  "name": "forcoinblood2e",
   "version": "1.0.0",
   "description": "Template for foundry module creation",
   "dependencies": {
@@ -14,17 +14,17 @@
     "test": "jest",
     "start": "npm-run-all --parallel compile:sass compile:pug build:ts",
     "compile:sass": "node-sass ./src/scss/main.scss ./src/bundle.css -w",
-    "compile:pug": "pug ./src/pug/ -o ./src/templates/ -w",
+    "compile:pug": "pug ./src/pug/ -o ./templates/ -w",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
     "build:css": "npm-run-all compile:sass prefix:css",
     "build:ts": "babel --out-file ./src/main.js ./src/typescript/main.ts -w"
   },
-  "author": "Cassie Levet",
+  "author": "Cassie Levett",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/clevett/fvtt-template/issues"
+    "url": "https://github.com/clevett/forcoinblood2e/issues"
   },
-  "homepage": "https://github.com/clevett/fvtt-template#readme",
+  "homepage": "https://github.com/clevett/forcoinblood2e#readme",
   "devDependencies": {
     "@babel/cli": "^7.13.16",
     "@babel/core": "^7.14.0",

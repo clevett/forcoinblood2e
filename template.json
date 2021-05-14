@@ -1,7 +1,63 @@
 {
-  "Action":{},
+  "Actor":{
+    "types": ["character", "npc"],
+    "character": {
+      "templates": ["base"],
+      "gm_note": "",
+      "level":1,
+      "description": "",
+      "attributes": {
+        "might": {
+          "max": 20,
+          "min": 1,
+          "modifier": 0,
+          "value": 10
+        },
+        "learning": {
+          "max": 20,
+          "min": 1,
+          "modifier": 0,
+          "value": 10
+        },
+        "insight": {
+          "max": 20,
+          "min": 1,
+          "modifier": 0,
+          "value": 10
+        },
+        "fortitude": {
+          "max": 20,
+          "min": 1,
+          "modifier": 0,
+          "value": 10
+        },
+        "agility": {
+          "max": 20,
+          "min": 1,
+          "modifier": 0,
+          "value": 10
+        },
+        "charisma": {
+          "max": 20,
+          "min": 1,
+          "modifier": 0,
+          "value": 10
+        }
+      },
+      "characteristics": {
+        "experience_points": 0,
+        "infamy": 0,
+        "saving_throw": 0
+      }
+    },
+    "npc": {
+      "lifeblood": 0,
+      "defense": 0,
+      "saving_throw": 0
+    }
+  },
   "Item":{
-    "type": [
+    "types": [
       "gear",
       "weapon"
     ],
