@@ -3,17 +3,31 @@
   "title": "For Coin and Blood 2nd Edition",
   "description": "A system for playing For Coin and Blood",
   "author": "Cassie Levett",
-  "version": 0.01,
-  "minimum": "0.7.9",
+  "version": "0.01",
+  "minimumCoreVersion": "0.7.9",
   "compatibleCoreVersion": "0.7.9",
+  "templateVersion": 2,
   "esmodule": [
-    "module/WeaponItemSheet.js"
+    "module/forcoinblood2e.js"
   ],
   "styles": [
-    "./src/main.css"
+    "src/bundle.css"
+  ],
+  "scripts": [],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
   ],
   "gridDistance": 5,
   "gridUnits": "ft",
   "primaryTokenAttribute": "lifeblood",
-  "initiative": "1d6"
+  "initiative": "1d6",
+  "url": "https://github.com/clevett/forcoinblood2e",
+  "manifest": "https://raw.githubusercontent.com/clevett/forcoinblood2e/main/system.json",
+  "download": "",
+  "license": "LICENSE.txt"
 }
