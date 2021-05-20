@@ -60,7 +60,7 @@
         "value": 1
       },
       "defense": 0,
-      "saving_throw": 0
+      "savingthrow": 0
     }
   },
   "Item":{
@@ -78,7 +78,8 @@
     },
     "weapon": {
       "templates": ["base"],
-      "properties": ""
+      "properties": "",
+      "attackWith": "firearm"
     },
     "gear": {
       "templates": ["base"]

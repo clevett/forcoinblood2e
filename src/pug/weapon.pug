@@ -6,4 +6,12 @@ form(class="{{cssClass}}" autocomplete="off")
         input(name="name" type="text" value="{{item.name}}")
     .template-type
       | {{item.type}}
-  p THIS IS THE WEAPON SHEET 
+  div
+    | {{localize "forcoinblood2e.weapon.attackWith"}}
+    select(name="data.attackwith")
+      | {{#select data.attackWith}}
+      | {{#each config.attackTypes as |name type|}}
+      option(value="{{type}}")
+        | {{localize name}}
+      | {{/each}}
+      | {{/select}}

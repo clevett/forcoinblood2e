@@ -1,0 +1,11 @@
+{
+  "forcoinblood2e": {
+    "attack": {
+      "spell": "Spell",
+      "firearm": "Firearm"
+    },
+    "weapon": {
+      "attackWith": "Attack with:"
+    }
+  }
+}
