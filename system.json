@@ -8,12 +8,11 @@
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 2,
   "esmodules": [
-    "module/forcoinblood2e.js"
+    "src/forcoinblood2e.js"
   ],
   "styles": [
     "src/bundle.css"
   ],
-  "scripts": [],
   "packs": [],
   "languages": [],
   "gridDistance": 5,

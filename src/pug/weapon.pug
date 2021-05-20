@@ -1,0 +1,9 @@
+form(class="{{cssClass}}" autocomplete="off")
+  header.sheet-header
+    img.weapon-img(data-edit="img" src="{{item.img}}" title="{{item.name}}")
+    .header-fields
+      .gridrow
+        input(name="name" type="text" value="{{item.name}}")
+    .template-type
+      | {{item.type}}
+  p THIS IS THE WEAPON SHEET 

@@ -1,4 +1,4 @@
-import ForCoinBloodItemSheet from './sheets/ForCoinBloodItemSheet.js';
+import ForCoinBloodItemSheet from './js/ForCoinBloodItemSheet.js';
 
 Hooks.once("init", function () {
   const message = "Initialize For Coin and Blood 2nd Edition"
