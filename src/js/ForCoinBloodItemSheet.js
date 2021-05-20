@@ -1,1 +1,5 @@
-console.log("TEST 23");
+export default class ForCoinBloodItemSheet extends ItemSheet {
+  get template() {
+    return `systems/forcoinblood2e/templates/sheets/${this.item.data.type}.html`
+  }
+}
