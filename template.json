@@ -47,11 +47,18 @@
       "characteristics": {
         "experience_points": 0,
         "infamy": 0,
-        "saving_throw": 0
+        "saving_throw": 0,
+        "lifeblood": {
+          "max": 20,
+          "value": 1
+        }
       }
     },
     "npc": {
-      "lifeblood": 0,
+      "lifeblood": {
+        "max": 20,
+        "value": 1
+      },
       "defense": 0,
       "saving_throw": 0
     }
@@ -74,7 +81,7 @@
       "properties": ""
     },
     "gear": {
-      "templates": ["base"],
+      "templates": ["base"]
     }
   }
 }

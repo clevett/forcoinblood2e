@@ -3,11 +3,11 @@
   "title": "For Coin and Blood 2nd Edition",
   "description": "A system for playing For Coin and Blood",
   "author": "Cassie Levett",
-  "version": "0.01",
-  "minimumCoreVersion": "0.7.9",
+  "version": "0.0.1",
+  "minimumCoreVersion": "0.7.8",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 2,
-  "esmodule": [
+  "esmodules": [
     "module/forcoinblood2e.js"
   ],
   "styles": [
@@ -15,13 +15,7 @@
   ],
   "scripts": [],
   "packs": [],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "lang/en.json"
-    }
-  ],
+  "languages": [],
   "gridDistance": 5,
   "gridUnits": "ft",
   "primaryTokenAttribute": "lifeblood",
