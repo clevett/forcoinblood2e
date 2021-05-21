@@ -31,6 +31,12 @@
 .fcb2 .grid {
   display: grid; }
 
+.fcb2 .grid-column-gap {
+  grid-column-gap: 1%; }
+
+.fcb2 .grid-row-gap {
+  grid-row-gap: 0.5rem; }
+
 .fcb2 .grid-inline {
   display: inline-grid; }
 
@@ -49,8 +55,17 @@
 .fcb2 .align-content-center {
   align-content: center; }
 
+.fcb2 .align-items-center {
+  align-items: center; }
+
 .fcb2 .justify-content-center {
   justify-content: center; }
+
+.fcb2 label {
+  align-items: center;
+  display: grid;
+  font-weight: bold;
+  text-transform: capitalize; }
 
 .fcb2.sheet.item hr {
   width: 100%; }

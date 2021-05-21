@@ -1,0 +1,9 @@
+- const buttonName = name => name.replace(/ /g, '-')
+- const attrName = name => name.replace(/ /g, '_')
+
+mixin label(name, type)
+	label(for=`${type}-${attrName(name)}` title=`enter ${name}`) #{name}
+
+mixin textInput(name, type)
+	+label(name, type)
+	input(id=`${type}-${attrName(name)}` name=`${attrName(name)}` placeholder=name type='text' value=`{{${type}.${name}}}`)

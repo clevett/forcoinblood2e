@@ -3,13 +3,14 @@
     "types": ["character", "npc"],
     "templates": {
       "base": {
+        "defense": 1,
         "description": "",
-        "saving_throw": 0,
+        "name":"",
         "lifeblood": {
           "max": 20,
           "value": 1
         },
-        "defense": 1,
+        "saving_throw": 0,
         "xp": 0
       }
     },
@@ -74,7 +75,7 @@
       }
     },
     "npc": {
-      "templates": ["characteristics"],
+      "templates": ["base"],
       "environment": "",
       "qualities": "",
       "attacks": {}
