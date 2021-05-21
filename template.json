@@ -65,6 +65,7 @@
   },
   "Item":{
     "types": [
+      "armor",
       "gear",
       "weapon"
     ],
@@ -75,6 +76,10 @@
         "name": "",
         "description": ""
       }
+    },
+    "armor": {
+      "templates": ["base"],
+      "reduction": ""
     },
     "weapon": {
       "templates": ["base"],

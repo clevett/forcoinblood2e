@@ -12,8 +12,8 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "npm-run-all --parallel compile:sass compile:pug compile:ts",
-    "compile:sass": "node-sass ./src/scss/main.scss ./src/bundle.css -w",
+    "start": "npm-run-all --parallel compile:sass compile:pug",
+    "compile:sass": "node-sass ./src/sass/main.sass ./src/bundle.css -w",
     "compile:pug": "pug ./src/pug/ -o ./templates/ -w",
     "compile:ts": "tsc ./src/typescript/*.ts --watch --outDir ./src/js",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
@@ -26,9 +26,6 @@
   },
   "homepage": "https://github.com/clevett/forcoinblood2e#readme",
   "devDependencies": {
-    "@babel/cli": "^7.13.16",
-    "@babel/core": "^7.14.0",
-    "@babel/preset-typescript": "^7.13.0",
     "jest": "^26.6.3"
   }
 }

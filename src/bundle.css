@@ -1,1 +1,81 @@
-/* SCSS Version 0.1.0 */
+.fcb2 .border {
+  border: 0.15em solid #4c4c4c; }
+
+.fcb2 .bottom-border {
+  border-bottom: 0.2em solid black; }
+
+.fcb2 .font-weight-bold {
+  font-weight: bold; }
+
+.fcb2 .font-smallcap {
+  font-variant: small-caps; }
+
+.fcb2 .text-capitalize {
+  text-transform: capitalize; }
+
+.fcb2 .text-center {
+  text-align: center; }
+
+.fcb2 .text-italic {
+  font-style: italic; }
+
+.fcb2 .text-primary {
+  color: #79016f; }
+
+.fcb2 .text-right {
+  text-align: right; }
+
+.fcb2 .text-uppercase {
+  text-transform: uppercase; }
+
+.fcb2 .grid {
+  display: grid; }
+
+.fcb2 .grid-inline {
+  display: inline-grid; }
+
+.fcb2 .grid-2column {
+  grid-template-columns: repeat(2, 1fr); }
+
+.fcb2 .grid-3column {
+  grid-template-columns: repeat(3, 1fr); }
+
+.fcb2 .grid-4column {
+  grid-template-columns: repeat(4, 1fr); }
+
+.fcb2 .auto-2column {
+  grid-template-columns: auto 1fr; }
+
+.fcb2 .align-content-center {
+  align-content: center; }
+
+.fcb2 .justify-content-center {
+  justify-content: center; }
+
+.fcb2.sheet.item hr {
+  width: 100%; }
+
+.fcb2.sheet.item form {
+  display: flex;
+  flex-direction: column; }
+  .fcb2.sheet.item form input[type="text"],
+  .fcb2.sheet.item form input[type="number"] {
+    background-color: transparent;
+    border-bottom: 0.15em solid black;
+    border: 0em;
+    height: 2.1em;
+    width: 100%; }
+    .fcb2.sheet.item form input[type="text"]::placeholder,
+    .fcb2.sheet.item form input[type="number"]::placeholder {
+      background-color: #b9dadf;
+      border: 0.1em dotted #79016f; }
+  .fcb2.sheet.item form .header-fields input[type="text"] {
+    font-size: 1.5em; }
+  .fcb2.sheet.item form .content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column; }
+    .fcb2.sheet.item form .content .editor {
+      background-color: #b9dadf;
+      height: 100%; }

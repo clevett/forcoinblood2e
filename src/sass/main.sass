@@ -1,0 +1,38 @@
+@import abstracts/_variables
+@import abstracts/_styles
+@import base/_typography
+@import layout/_layouts
+
+.fcb2.sheet.item
+  hr
+    width: 100%
+
+  form
+    display: flex
+    flex-direction: column
+
+    input[type="text"],
+    input[type="number"]
+      background-color: transparent
+      border-bottom: 0.15em solid $dark
+      border: 0em
+      height: 2.1em
+      width: 100%
+
+      &::placeholder
+        background-color: $light
+        border: 0.1em dotted $primary
+
+    .header-fields
+      input[type="text"]
+        font-size: 1.5em
+
+    .content
+      display: flex
+      height: 100%
+      width: 100%
+      flex-direction: column
+
+      .editor
+        background-color: $light
+        height: 100%
