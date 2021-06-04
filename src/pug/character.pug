@@ -2,14 +2,15 @@ include abstracts/_mixins.pug
 
 form(class="{{cssClass}}" autocomplete="off")
   header.sheet-header
-    img.weapon-img(data-edit="img" src="{{actor.img}}" title="{{actor.name}}")
+    img(data-edit="img" src="{{actor.img}}" title="{{actor.name}}")
     .header-fields.grid.grid-row-gap
       .grid.name
         input(name="name" placeholder="name" type="text" value="{{actor.name}}")
       .grid.grid-column-gap.font-smallcap.class
         each val in ['class', 'level', 'xp', 'xp bonus']
           .grid.auto-2column.grid-column-gap
-            +textInputLabel(val, "character")
+            label(for=`{{data.${attrName(val)}}}`) #{`${val}`}
+            input(name=`{{data.${attrName(val)}}}` placeholder=name type='text' value=`{{data.${attrName(val)}}}`)
   hr
 
   section.content.grid.grid-row-gap
@@ -17,25 +18,34 @@ form(class="{{cssClass}}" autocomplete="off")
       .attributes
         each val in ['might', 'learning', 'insight', 'fortitude', 'agility', 'charisma']
           div(class="attribute_value")
-            input(id=`character-${val}` name=`${val}` placeholder='10' type='number' value=`{{character.attributes.${val}.value}}`)
-            +label(val, 'character')
+            label(for=`{{data.attributes.${val}.value}}`) #{`${val}`}
+            input(name=`{{data.attributes.${val}.value}}` placeholder='10' type='number' value=`{{data.attributes.${val}.value}}`)
           div(class="attribute_mod")
-            label(for=`character.attributes.${val}.modifier`)
-              | #{`{{character.attributes.${val}.modifier}}`}
+            label(for=`data.attributes.${val}.modifier`)
+              | #{`{{data.attributes.${val}.modifier}}`}
           div(class="attribute_description")
-            label(for=`character.attributes.${val}.modifier`)
-              | #{`{{character.attributes.${val}.description}}`}
+            label(for=`data.attributes.${val}.modifier`)
+              | #{`{{data.attributes.${val}.description}}`}
         div(class="attribute_value")
-          input(id=`character-infamy` name=`infamy` placeholder=`3` type='number' value=`{{character.attributes.infamy.value}}`)
-          +label('infamy', 'character')
-        div(class="attribute_value")
-          input(id=`character-saving-throw` name=`saving throw` placeholder=`14` type='number' value=`{{character.attributes.saving-throw.value}}`)
-          +label('infamy', 'character')
-        div(class="attribute_value")
-          input(id=`character-mods` name=`mods` placeholder=`mods` type='text' value=`{{character.attributes.mods.value}}`)
-          +label('mods', 'character')
+          label(for=`{{data.infamy}}`) #{`${val}`}
+          input(name=`{{data.infamy}}` placeholder=`3` type='number' value=`{{data.infamy}}`)
+        //- div(class="attribute_value")
+        //-   +label('infamy', 'saving throw')
+        //-   input(id=`character-saving-throw` name=`saving throw` placeholder=`14` type='number' value=`{{character.saving_throw.value}}`)
+        //- div(class="attribute_value")
+        //-   +label('mods', 'character')
+        //-   input(id=`character-mods` name=`mods` placeholder=`mods` type='text' value=`{{data.attributes.mods.value}}`)
 
       .details
-        each val in ['damage', 'defense', 'armor', 'shield']
-          +textInputLabel(val, "character")
+        //- .combat
+        //-   each val in ['damage', 'defense', 'armor', 'shield']
+        //-     +textInputLabel(val, "character")
+        //- .lifeblood
+        //-   div(class="attribute_value")
+        //-     +label('life blood max', 'character')
+        //-     input(id=`life-blood-max` name=`life blood max` placeholder=`10` type='number' value=`{{character.lifeblood.max}}`)
+        //-   div(class="attribute_value")
+        //-     +label('life blood', 'character')
+        //-     input(id=`life-blood` name=`life blood` placeholder=`10` type='number' value=`{{character.lifeblood.value}}`)
+        
 

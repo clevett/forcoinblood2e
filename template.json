@@ -24,37 +24,43 @@
           "max": 20,
           "min": 1,
           "modifier": 0,
-          "value": 10
+          "value": 10,
+          "description": ""
         },
         "learning": {
           "max": 20,
           "min": 1,
           "modifier": 0,
-          "value": 10
+          "value": 10,
+          "description": ""
         },
         "insight": {
           "max": 20,
           "min": 1,
           "modifier": 0,
-          "value": 10
+          "value": 10,
+          "description": ""
         },
         "fortitude": {
           "max": 20,
           "min": 1,
           "modifier": 0,
-          "value": 10
+          "value": 10,
+          "description": ""
         },
         "agility": {
           "max": 20,
           "min": 1,
           "modifier": 0,
-          "value": 10
+          "value": 10,
+          "description": ""
         },
         "charisma": {
           "max": 20,
           "min": 1,
           "modifier": 0,
-          "value": 10
+          "value": 10,
+          "description": ""
         }
       },
       "armor": 0,
