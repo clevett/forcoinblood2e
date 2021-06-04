@@ -1,9 +1,43 @@
-- const buttonName = name => name.replace(/ /g, '-')
-- const attrName = name => name.replace(/ /g, '_')
+- const replaceSpaceWithDash = name => name.replace(/ /g, '-')
+- const replaceSpaceWithUnderscore = name => name.replace(/ /g, '_')
+- const replaceSpaceWithPeriod = name => name.replace(/ /g, '.')
+- const replacePeriodsWithDash = name => name.replace(/\./g,'-')
+- const replacePeriodsWithUnderscore = name => name.replace(/\./g,'_')
 
-mixin label(name, type)
-	label(for=`${type}-${attrName(name)}` title=`enter ${name}`) #{name}
+mixin label(jsonKey)
+	- const forString = replacePeriodsWithDash(jsonKey)
+	- const name = jsonKey.split(".").pop()
+	label(for=`${forString}` title=`enter ${name}`) #{name}
 
 mixin textInput(name, type)
+	input(id=`${type}-${replaceSpaceWithUnderscore(name)}` name=`${replaceSpaceWithUnderscore(name)}` placeholder=name type='text' value=`{{${type}.${replaceSpaceWithUnderscore(name)}}}`)
+
+mixin numberInput(attrName, jsonKey, customPlaceholder)
+	- const id = `${replaceSpaceWithDash(jsonKey)}-${replaceSpaceWithUnderscore(name)}`
+	- const name = replaceSpaceWithUnderscore(attrName)
+	- const placeholder = customPlaceholder ? customPlaceholder : attrName
+	- const value = `${replaceSpaceWithPeriod(jsonKey)}.${replaceSpaceWithUnderscore(name)}`
+	input(id=`${id}` name=`${name}` placeholder=`${placeholder}` type='number' value=`{{${value}}}`)
+
+mixin input(jsonKey, customPlaceholder)
+	- const id = replacePeriodsWithDash(jsonKey)
+	- const name = replacePeriodsWithUnderscore(jsonKey)
+	- const placeholder = customPlaceholder ? customPlaceholder : jsonKey.split(".").pop()
+	- const type = !isNaN(parseFloat(customPlaceholder)) ? "number" : "text"
+	input(id=`${id}` name=`${name}` placeholder=`${placeholder}` type=`${type}` value=`{{${jsonKey}}}`)
+
+mixin labelInput(jsonKey, type, placeholder)
+	+label(jsonKey)
+	+input(jsonKey, placeholder)
+
+mixin numberInputLabel(name, type, placeholder)
 	+label(name, type)
-	input(id=`${type}-${attrName(name)}` name=`${attrName(name)}` placeholder=name type='text' value=`{{${type}.${name}}}`)
+	+numberInput(name, type, placeholder)
+
+mixin textInputLabel(name, type)
+	+label(name, type)
+	+textInput(name, type)
+
+mixin textInputLabelReverse(name, type)
+	+textInput(name, type)
+	+label(name, type)

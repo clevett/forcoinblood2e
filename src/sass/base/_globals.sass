@@ -1,0 +1,24 @@
+.fcb2
+  form
+    display: flex
+    flex-direction: column
+
+    input[type="text"],
+    input[type="number"]
+      background-color: transparent
+      border-bottom: 0.15em solid $dark
+      border: 0em
+      width: 100%
+
+      &::placeholder
+        background-color: $light
+        border: 0.1em dotted $primary
+
+  hr
+    width: 100%
+
+  label
+    align-items: center
+    display: grid
+    font-weight: bold
+    text-transform: capitalize

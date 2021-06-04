@@ -4,6 +4,29 @@
 .fcb2 .bottom-border {
   border-bottom: 0.2em solid black; }
 
+.fcb2 form {
+  display: flex;
+  flex-direction: column; }
+  .fcb2 form input[type="text"],
+  .fcb2 form input[type="number"] {
+    background-color: transparent;
+    border-bottom: 0.15em solid black;
+    border: 0em;
+    width: 100%; }
+    .fcb2 form input[type="text"]::placeholder,
+    .fcb2 form input[type="number"]::placeholder {
+      background-color: #b9dadf;
+      border: 0.1em dotted #79016f; }
+
+.fcb2 hr {
+  width: 100%; }
+
+.fcb2 label {
+  align-items: center;
+  display: grid;
+  font-weight: bold;
+  text-transform: capitalize; }
+
 .fcb2 .font-weight-bold {
   font-weight: bold; }
 
@@ -61,36 +84,20 @@
 .fcb2 .justify-content-center {
   justify-content: center; }
 
-.fcb2 label {
-  align-items: center;
-  display: grid;
-  font-weight: bold;
-  text-transform: capitalize; }
+.fcb2.sheet form .header-fields .name > input[type="text"] {
+  font-size: 1.5em; }
 
-.fcb2.sheet.item hr {
-  width: 100%; }
-
-.fcb2.sheet.item form {
+.fcb2.sheet.item form .content {
   display: flex;
+  height: 100%;
+  width: 100%;
   flex-direction: column; }
-  .fcb2.sheet.item form input[type="text"],
-  .fcb2.sheet.item form input[type="number"] {
-    background-color: transparent;
-    border-bottom: 0.15em solid black;
-    border: 0em;
-    height: 2.1em;
-    width: 100%; }
-    .fcb2.sheet.item form input[type="text"]::placeholder,
-    .fcb2.sheet.item form input[type="number"]::placeholder {
-      background-color: #b9dadf;
-      border: 0.1em dotted #79016f; }
-  .fcb2.sheet.item form .header-fields input[type="text"] {
-    font-size: 1.5em; }
-  .fcb2.sheet.item form .content {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    flex-direction: column; }
-    .fcb2.sheet.item form .content .editor {
-      background-color: #b9dadf;
-      height: 100%; }
+  .fcb2.sheet.item form .content .editor {
+    background-color: #b9dadf;
+    height: 100%; }
+
+.fcb2.sheet.actor form .header-fields .class {
+  grid-template-columns: 2fr repeat(3, 1fr); }
+
+.fcb2.sheet.actor form .content .core {
+  grid-template-columns: 30% 1fr; }

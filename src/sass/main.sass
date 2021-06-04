@@ -1,39 +1,19 @@
 @import abstracts/_variables
 @import abstracts/_styles
+
+@import base/_globals
 @import base/_typography
+
 @import layout/_layouts
 
-.fcb2
-  label
-    align-items: center
-    display: grid
-    font-weight: bold
-    text-transform: capitalize
-
-.fcb2.sheet.item
-  hr
-    width: 100%
-
+.fcb2.sheet
   form
-    display: flex
-    flex-direction: column
-
-    input[type="text"],
-    input[type="number"]
-      background-color: transparent
-      border-bottom: 0.15em solid $dark
-      border: 0em
-      height: 2.1em
-      width: 100%
-
-      &::placeholder
-        background-color: $light
-        border: 0.1em dotted $primary
-
     .header-fields
-      input[type="text"]
+      .name > input[type="text"]
         font-size: 1.5em
 
+.fcb2.sheet.item
+  form
     .content
       display: flex
       height: 100%
@@ -43,3 +23,12 @@
       .editor
         background-color: $light
         height: 100%
+
+.fcb2.sheet.actor
+  form
+    .header-fields
+      .class
+        grid-template-columns: 2fr repeat(3, 1fr)
+    .content
+      .core
+        grid-template-columns: 30% 1fr

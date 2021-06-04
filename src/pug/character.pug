@@ -2,14 +2,40 @@ include abstracts/_mixins.pug
 
 form(class="{{cssClass}}" autocomplete="off")
   header.sheet-header
-    img.weapon-img(data-edit="img" src="{{character.img}}" title="{{character.name}}")
+    img.weapon-img(data-edit="img" src="{{actor.img}}" title="{{actor.name}}")
     .header-fields.grid.grid-row-gap
-      .grid.auto-2column.grid-column-gap.font-smallcap
-        +textInput("name", "character")
-      .grid.grid-2column.grid-column-gap.font-smallcap
-        each val in ['class', 'level']
+      .grid.name
+        input(name="name" placeholder="name" type="text" value="{{actor.name}}")
+      .grid.grid-column-gap.font-smallcap.class
+        each val in ['class', 'level', 'xp', 'xp bonus']
           .grid.auto-2column.grid-column-gap
-            +textInput(val, "character")
+            +textInputLabel(val, "character")
   hr
 
-  section.content
+  section.content.grid.grid-row-gap
+    .grid.core
+      .attributes
+        each val in ['might', 'learning', 'insight', 'fortitude', 'agility', 'charisma']
+          div(class="attribute_value")
+            input(id=`character-${val}` name=`${val}` placeholder='10' type='number' value=`{{character.attributes.${val}.value}}`)
+            +label(val, 'character')
+          div(class="attribute_mod")
+            label(for=`character.attributes.${val}.modifier`)
+              | #{`{{character.attributes.${val}.modifier}}`}
+          div(class="attribute_description")
+            label(for=`character.attributes.${val}.modifier`)
+              | #{`{{character.attributes.${val}.description}}`}
+        div(class="attribute_value")
+          input(id=`character-infamy` name=`infamy` placeholder=`3` type='number' value=`{{character.attributes.infamy.value}}`)
+          +label('infamy', 'character')
+        div(class="attribute_value")
+          input(id=`character-saving-throw` name=`saving throw` placeholder=`14` type='number' value=`{{character.attributes.saving-throw.value}}`)
+          +label('infamy', 'character')
+        div(class="attribute_value")
+          input(id=`character-mods` name=`mods` placeholder=`mods` type='text' value=`{{character.attributes.mods.value}}`)
+          +label('mods', 'character')
+
+      .details
+        each val in ['damage', 'defense', 'armor', 'shield']
+          +textInputLabel(val, "character")
+
