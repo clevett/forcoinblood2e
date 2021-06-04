@@ -11,15 +11,19 @@ form(class="{{cssClass}}" autocomplete="off")
           | {{item.type}}
   hr
 
+
   section.content
     .attributes
       .grid.grid-2column
         .div
-          +textInput("weight", "weapon")
+          label Weight
+          input(type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number")
         .div 
-          +textInput("cost", "weapon")
+          label Cost
+          input(type="text" name="data.cost" value="{{data.cost}}" data-dtype="Text")
       .grid 
-        +textInput("properties", "weapon")
+          label Properties
+          input(type="text" name="data.properties" value="{{data.properties}}" data-dtype="Text")
     .description
       +label('description', 'weapon')
     | {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}

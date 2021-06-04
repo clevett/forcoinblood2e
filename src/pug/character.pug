@@ -9,17 +9,19 @@ form(class="{{cssClass}}" autocomplete="off")
       .grid.grid-column-gap.font-smallcap.class
         each val in ['class', 'level', 'xp', 'xp bonus']
           .grid.auto-2column.grid-column-gap
-            label(for=`{{data.${attrName(val)}}}`) #{`${val}`}
-            input(name=`{{data.${attrName(val)}}}` placeholder=name type='text' value=`{{data.${attrName(val)}}}`)
+            label(for=`data.${attrName(val)}`) #{`${val}`}
+            input(name=`data.${attrName(val)}` placeholder=name type='text' value=`{{data.${attrName(val)}}}`)
   hr
+
+  name="data.attributes.might.value"
 
   section.content.grid.grid-row-gap
     .grid.core
       .attributes
         each val in ['might', 'learning', 'insight', 'fortitude', 'agility', 'charisma']
           div(class="attribute_value")
-            label(for=`{{data.attributes.${val}.value}}`) #{`${val}`}
-            input(name=`{{data.attributes.${val}.value}}` placeholder='10' type='number' value=`{{data.attributes.${val}.value}}`)
+            label(for=`data.attributes.${val}.value`) #{`${val}`}
+            input(name=`data.attributes.${val}.value` placeholder='10' type='number' value=`{{data.attributes.${val}.value}}`)
           div(class="attribute_mod")
             label(for=`data.attributes.${val}.modifier`)
               | #{`{{data.attributes.${val}.modifier}}`}
@@ -27,25 +29,22 @@ form(class="{{cssClass}}" autocomplete="off")
             label(for=`data.attributes.${val}.modifier`)
               | #{`{{data.attributes.${val}.description}}`}
         div(class="attribute_value")
-          label(for=`{{data.infamy}}`) #{`${val}`}
-          input(name=`{{data.infamy}}` placeholder=`3` type='number' value=`{{data.infamy}}`)
-        //- div(class="attribute_value")
-        //-   +label('infamy', 'saving throw')
-        //-   input(id=`character-saving-throw` name=`saving throw` placeholder=`14` type='number' value=`{{character.saving_throw.value}}`)
-        //- div(class="attribute_value")
-        //-   +label('mods', 'character')
-        //-   input(id=`character-mods` name=`mods` placeholder=`mods` type='text' value=`{{data.attributes.mods.value}}`)
+          label(for=`data.infamy`) #{`${val}`}
+          input(name=`data.infamy` placeholder=`3` type='number' value=`{{data.infamy}}`)
+        div(class="attribute_value")
+          label(for=`data.saving_throw.value`) #{`${val}`}
+          input(name=`data.saving_throw.value` placeholder=`14` type='number' value=`{{data.saving_throw.value}}`)
+        div(class="attribute_value")
+          label(for=`data.attributes.mods.value`) #{`${val}`}
+          input(name=`data.attributes.mods.value` placeholder=`mods` type='text' value=`{{data.attributes.mods.value}}`)
 
       .details
-        //- .combat
-        //-   each val in ['damage', 'defense', 'armor', 'shield']
-        //-     +textInputLabel(val, "character")
-        //- .lifeblood
-        //-   div(class="attribute_value")
-        //-     +label('life blood max', 'character')
-        //-     input(id=`life-blood-max` name=`life blood max` placeholder=`10` type='number' value=`{{character.lifeblood.max}}`)
-        //-   div(class="attribute_value")
-        //-     +label('life blood', 'character')
-        //-     input(id=`life-blood` name=`life blood` placeholder=`10` type='number' value=`{{character.lifeblood.value}}`)
-        
-
+          each val in ['damage', 'defense', 'armor', 'shield']
+            +textInputLabel(val, "character")
+        .lifeblood
+          div(class="attribute_value")
+            +label('life blood max', 'character')
+            input(id=`life-blood-max` name=`life blood max` placeholder=`10` type='number' value=`{{character.lifeblood.max}}`)
+          div(class="attribute_value")
+            +label('life blood', 'character')
+            input(id=`life-blood` name=`life blood` placeholder=`10` type='number' value=`{{character.lifeblood.value}}`)
