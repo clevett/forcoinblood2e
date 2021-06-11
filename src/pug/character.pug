@@ -13,38 +13,58 @@ form(class="{{cssClass}}" autocomplete="off")
             input(name=`data.${attrName(val)}` placeholder=name type='text' value=`{{data.${attrName(val)}}}`)
   hr
 
-  name="data.attributes.might.value"
-
   section.content.grid.grid-row-gap
     .grid.core
-      .attributes
+      .attributes.grid
         each val in ['might', 'learning', 'insight', 'fortitude', 'agility', 'charisma']
-          div(class="attribute_value")
-            label(for=`data.attributes.${val}.value`) #{`${val}`}
-            input(name=`data.attributes.${val}.value` placeholder='10' type='number' value=`{{data.attributes.${val}.value}}`)
-          div(class="attribute_mod")
-            label(for=`data.attributes.${val}.modifier`)
+          div.grid(class="attribute_value")
+            input.border.text-center(name=`data.attributes.${val}.value` placeholder='10' type='number' value=`{{data.attributes.${val}.value}}`)
+            .attribute_header.grid.auto-2column
+              label.font-smallcap.value(for=`data.attributes.${val}.value`) #{`${val}`}
+              label.descriptor.text-right(for=`data.attributes.${val}.description`) ( Above average )
+              //- | #{`{{data.attributes.${val}.description}}`}
+            label.thin-border.text-center(for=`data.attributes.${val}.modifier`) 
               | #{`{{data.attributes.${val}.modifier}}`}
-          div(class="attribute_description")
-            label(for=`data.attributes.${val}.modifier`)
-              | #{`{{data.attributes.${val}.description}}`}
-        div(class="attribute_value")
-          label(for=`data.infamy`) #{`${val}`}
-          input(name=`data.infamy` placeholder=`3` type='number' value=`{{data.infamy}}`)
-        div(class="attribute_value")
-          label(for=`data.saving_throw.value`) #{`${val}`}
-          input(name=`data.saving_throw.value` placeholder=`14` type='number' value=`{{data.saving_throw.value}}`)
-        div(class="attribute_value")
-          label(for=`data.attributes.mods.value`) #{`${val}`}
-          input(name=`data.attributes.mods.value` placeholder=`mods` type='text' value=`{{data.attributes.mods.value}}`)
+        div.grid(class="attribute_value")
+          input.border.text-center(name=`data.infamy` placeholder=`3` type='number' value=`{{data.infamy}}`)
+          label.attribute_header.font-smallcap(for=`data.infamy`) infamy
+
+        div.grid.auto-2column.grid-column-gap
+          label.font-smallcap(for=`data.saving_throw.value`) saving throw
+          input.text-center(name=`data.saving_throw.value` placeholder=`14` type='number' value=`{{data.saving_throw.value}}`)
+        div.grid.auto-2column.grid-column-gap
+          label.font-smallcap(for=`data.attributes.mods.value`) mods
+          input.text-center(name=`data.attributes.mods.value` placeholder=`mods` type='text' value=`{{data.attributes.mods.value}}`)
 
       .details
+        .damage.grid.border.grid-row-gap.grid-column-gap
           each val in ['damage', 'defense', 'armor', 'shield']
-            +textInputLabel(val, "character")
-        .lifeblood
-          div(class="attribute_value")
-            +label('life blood max', 'character')
-            input(id=`life-blood-max` name=`life blood max` placeholder=`10` type='number' value=`{{character.lifeblood.max}}`)
-          div(class="attribute_value")
-            +label('life blood', 'character')
-            input(id=`life-blood` name=`life blood` placeholder=`10` type='number' value=`{{character.lifeblood.value}}`)
+            div.grid.auto-2column.grid-column-gap
+              label.font-smallcap(for=`data.${val}.value`) #{`${val}`}
+              input.text-center(name=`data.${val}.value` placeholder=`14` type='number' value=`{{data.${val}.value}}`)
+          div.lifeblood.grid
+            label.text-left.font-smallcap lifeblood
+            div.grid.auto-2column.grid-column-gap
+              label.font-smallcap(for=`data.life_blood.value`) current
+              input.text-center(name=`data.life_blood.value` placeholder=`14` type='number' value=`{{data.life_blood.value}}`)
+            div.text-center /
+            div.grid.auto-2column.grid-column-gap
+              input.text-center(name=`data.life_blood.max` placeholder=`14` type='number' value=`{{data.life_blood.max}}`)
+              label.font-smallcap(for=`data.life_blood.max`) max
+        .notes.border
+          label.font-smallcap(for=`data.description`) notes
+          | {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+
+    .grid.coins.grid-4column.grid-column-gap
+      each val in ['gold', 'silver', 'copper', 'gems']
+        .grid.auto-2column.grid-column-gap
+          label.font-smallcap(for=`data.wealth.${val}`) #{`${val}`}
+          input.text-center(name=`data.wealth.${val}` placeholder=`0` type='number' value=`{{data.wealth.${val}}}`)
+
+    .grid.abilities.grid-3column.grid-column-gap
+      .grid.border
+        label.text-center.font-smallcap spells / abilities
+      .grid.border 
+        label.text-center.font-smallcap weapons / armor
+      .grid.border
+        label.text-center.font-smallcap equipment

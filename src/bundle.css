@@ -1,6 +1,9 @@
 .fcb2 .border {
   border: 0.15em solid #4c4c4c; }
 
+.fcb2 .thin-border {
+  border: 0.1em solid #4c4c4c; }
+
 .fcb2 .bottom-border {
   border-bottom: 0.2em solid black; }
 
@@ -11,12 +14,16 @@
   .fcb2 form input[type="number"] {
     background-color: transparent;
     border-bottom: 0.15em solid black;
-    border: 0em;
     width: 100%; }
     .fcb2 form input[type="text"]::placeholder,
     .fcb2 form input[type="number"]::placeholder {
       background-color: #b9dadf;
       border: 0.1em dotted #79016f; }
+    .fcb2 form input[type="text"]:hover, .fcb2 form input[type="text"]:focus,
+    .fcb2 form input[type="number"]:hover,
+    .fcb2 form input[type="number"]:focus {
+      background-color: #b9dadf;
+      transform: scale(1.05); }
 
 .fcb2 hr {
   width: 100%; }
@@ -41,6 +48,9 @@
 
 .fcb2 .text-italic {
   font-style: italic; }
+
+.fcb2 .text-left {
+  text-align: left; }
 
 .fcb2 .text-primary {
   color: #79016f; }
@@ -100,4 +110,41 @@
   grid-template-columns: 2fr repeat(3, 1fr); }
 
 .fcb2.sheet.actor form .content .core {
-  grid-template-columns: 30% 1fr; }
+  grid-template-columns: 35% 1fr;
+  grid-column-gap: 2%; }
+  .fcb2.sheet.actor form .content .core input {
+    height: 100%; }
+  .fcb2.sheet.actor form .content .core .attributes {
+    grid-template-rows: repeat(9);
+    grid-row-gap: 5px; }
+    .fcb2.sheet.actor form .content .core .attributes .attribute_value {
+      grid-template-columns: 3rem 1fr 2rem; }
+      .fcb2.sheet.actor form .content .core .attributes .attribute_value .attribute_header {
+        background-color: #222;
+        color: #fff;
+        padding-left: 2%;
+        font-size: 1.1em; }
+        .fcb2.sheet.actor form .content .core .attributes .attribute_value .attribute_header .descriptor {
+          font-size: 0.75em;
+          margin-right: 2%; }
+      .fcb2.sheet.actor form .content .core .attributes .attribute_value input {
+        border-radius: 0em; }
+    .fcb2.sheet.actor form .content .core .attributes .attribute_description {
+      grid-template-columns: 1fr; }
+      .fcb2.sheet.actor form .content .core .attributes .attribute_description input {
+        background-color: rgba(77, 77, 77, 0.0784314); }
+
+.fcb2.sheet.actor form .content .details .damage, .fcb2.sheet.actor form .content .details .lifeblood, .fcb2.sheet.actor form .content .details .notes {
+  margin-bottom: 5px;
+  padding: 2% 2.5%; }
+
+.fcb2.sheet.actor form .content .details .damage {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 3; }
+
+.fcb2.sheet.actor form .content .details .lifeblood {
+  grid-area: 3 / 1 / 3 / 3;
+  grid-template-columns: 1fr 1fr 1rem 1fr; }
+
+.fcb2.sheet.actor form .content .details .notes {
+  min-height: 150px; }

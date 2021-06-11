@@ -16,7 +16,6 @@
     },
     "character": {
       "templates": ["base"],
-      "description": "",
       "gm_note": "",
       "level":1,
       "attributes": {
